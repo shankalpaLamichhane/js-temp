@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/dom.js"></script>
+</head>
+
+<body>
+    <input class="appendBtn" type="button" value="Append Button">
+    <input class="ajaxBtn" type="button" value="Ajax Button">
+    <div id="myDiv" data-name="domenic" data-started-coding-at="15">
+        Sample Test
+    </div>
+    <div class="ajaxSection"></div>
+    <div class="injectDom"></div>
+    <form>
+        <label for="inputText">Select input</label>
+        <input type="text" id="inputText" class="inputText">
+        <br />
+        <label for="selectItem">Select value</label>
+        <select class="inputSelect" name="selectItem">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br/>
+        <div>
+            <label for="test">Select Tests</label>
+            <br>
+        <input type="checkbox" id="test" name="test1" value="Test1">
+        <label for="test1"> Test1</label><br>
+        <input type="checkbox" id="test" name="test2" value="Test2">
+        <label for="test2"> Test2</label><br>
+        <input type="checkbox" id="test" name="test3" value="Test3">
+        <label for="test3"> Test3</label><br>
+        </div>
+        <input class="formSubmit" type="submit" value="Submit Detail">
+    </form>
+    <div class="submissionDetail">
+    </div>
+    <script>
+        $(".btn").on("click", function () {
+            $(".btn").modifyClassName("testtest")
+            console.log($("#myDiv").getDataSet())
+        })
+        $(".appendBtn").on("click", function () {
+            $(".injectDom").injectDom()
+        })
+        $(".ajaxBtn").on("click", function () {
+            $(".ajaxSection").addAdditionalInformation();
+        })
+        $(".formSubmit").on("click",function(){
+            $(".submissionDetail").populateDetail();
+        })
+    </script>
+</body>
+
+</html>
